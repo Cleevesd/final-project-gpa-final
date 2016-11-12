@@ -1,0 +1,13 @@
+{
+  "User1":{
+    "name": "TestUser",
+    "courses":{
+      "course1":{
+        "courseName": "TestCourse",
+        "grade": "4.0"
+      }
+    }
+  }
+
+
+}
