@@ -28,15 +28,20 @@ a:hover {
 }
 
 .info,
-.person {
+.person,
+.course{
   margin: 20px;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 10px;
   background-color: #fff;
 }
+.course{
+
+}
 
 .info p,
-.person p {
+.person p,
+.course p{
   margin: 0;
 }

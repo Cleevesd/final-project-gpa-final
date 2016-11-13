@@ -1,12 +1,16 @@
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
+var Handlebars = require('handlebars');
 var users = require('./users');
 var app = express();
 var port = process.env.PORT || 3000;
 
-var profileTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'profile.html'), 'utf8');
+var profileTemplateSource = fs.readFileSync(path.join(__dirname, 'templates', 'profile.html'), 'utf8');
+var profileTemplate = Handlebars.compile(profileTemplateSource);
 
+var usersTemplateSource = fs.readFileSync(path.join(__dirname, 'templates', 'users.html'), 'utf8');
+var usersTemplate = Handlebars.compile(usersTemplateSource);
 // Serve static files from public/.
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -17,27 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.get('/users', function (req, res) {
 
-  var content = "<html>";
-  content += "<head>"
-  content += "<meta charset='utf-8'>"
-  content += "<title>Express Dynamic Content Demo - People</title>"
-  content += "<link rel='stylesheet' href='/style.css'>"
-  content += "</head>"
-  content += "<body>"
-  content += "<header>"
-  content += "<h1>Users</h1>"
-  content += "</header>"
-  content += "<main>"
-
-  Object.keys(users).forEach(function (person) {
-    content += "<div class='person'>";
-    content += "<p><a href='/users/" + person + "'>" + users[person].name + "</p>";
-    content += "</div>";
-  });
-
-  content += "</main>"
-  content += "</body>"
-  content += "</html>";
+var content = usersTemplate({users: users})
 
   res.send(content);
 
@@ -54,16 +38,12 @@ app.get('/users/:user', function (req, res, next) {
 
   if (person) {
 
-    var content = profileTemplate;
+    var content = profileTemplate(person);
 
     /*
      * Use regular expressions to replace our template patterns with the
      * actual info associated with the given person.
      */
-    content = content.replace(new RegExp('{{name}}', 'g'), person.name);
-    content = content.replace(new RegExp('{{course}}', 'g'), person.courses.course1.courseName);
-    content = content.replace(new RegExp('{{grade}}', 'g'), person.courses.course1.grade);
-
     res.send(content);
 
   } else {

@@ -1,23 +1,30 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Express Dynamic Content Demo - {{name}}</title>
     <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <header>
-      <h1>{{name}}</h1>
-    </header>
-    <main>
-      <div class="person">
-        <p>
-          Course: {{course}}
-        </p>
-        <p>
-          GPA: {{grade}}
-        </p>
-      </div>
-    </main>
-  </body>
+</head>
+<body>
+<header>
+    <h1>{{name}}</h1>
+</header>
+<main>
+    <div class="person">
+        {{#each courses}}
+        <div class="course">
+            <p>
+                Course Name: {{courseName}}
+            </p>
+            <p>
+                Grade: {{grade}}
+
+
+            </p>
+        </div>
+        {{/each}}
+    </div>
+</main>
+</body>
 </html>

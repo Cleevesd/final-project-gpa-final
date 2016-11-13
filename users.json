@@ -5,6 +5,19 @@
       "course1":{
         "courseName": "TestCourse",
         "grade": "4.0"
+      },
+      "course2":{
+        "courseName": "TestCourse2",
+        "grade": "3.0"
+      }
+    }
+  },
+  "User2":{
+    "name": "TestUser2",
+    "courses":{
+      "course1":{
+        "courseName": "TestCourse",
+        "grade": "4.0"
       }
     }
   }
