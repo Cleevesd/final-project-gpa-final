@@ -1,0 +1,95 @@
+header h1 {
+  display: inline-block;
+  font-family: "Verdana", cursive, sans-serif;
+  font-size: 72px;
+  font-weight: 200;
+  margin: 5px 10px;
+}
+
+header h1 {
+  color: white;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  margin: -10px;
+  font-size: 28px;
+  font-weight: 200;
+}
+
+.navbar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 20px;
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-item a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-item a:hover {
+  background-color: #444;
+}
+
+.navbar-right {
+  float: right;
+}
+
+main{
+  color: black;
+  text-align: center;
+  margin: 10%;
+  font-size: 30px;
+  font-family: fantasy;
+}
+
+body{
+  background-image: url("https://lh6.ggpht.com/VS2t79QbOOg5UBo7wJ8h-n7dnvTPH9UvU1hNrYjn_DW2WwzxND4bjBc59prf1QyvP_UU=w300");
+}
+
+.login p {
+  margin: 15px 0;
+}
+
+.login p.indent-wrapped {
+  padding-left: 50px;
+  text-indent: -50px;
+}
+
+.login-container {
+  position: relative;
+  bottom: -10px;
+  right: 50px:
+}
+
+#login-button {
+  width: 100px;
+  height: 30px;
+  background-color: silver;
+  border: none;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+  color: black;
+  padding: 0 0 8px 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  border-radius:15px;
+}
+
+#login-button:hover {
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.33);
+}
+
+footer{
+  color: black;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
