@@ -1,6 +1,7 @@
 {
   "User1":{
     "name": "TestUser",
+    "password":"95dfc7eb87aa3a10c40ae71b295c0965835cf72e73c55a0fe4d911329dd62b64",
     "courses":{
       "course1":{
         "courseName": "TestCourse",

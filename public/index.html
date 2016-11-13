@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="utf-8">
-    <title>Express Dynamic Content Demo</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>GPA Calculator</title>
+
+    <link rel="stylesheet" href="style.css" media="screen">
+
   </head>
   <body>
+
     <header>
-      <h1>Welcome!</h1>
+
+      <nav>
+        <ul class="navbar-list">
+          <h1><i class="h-title"></i> GPA Calculator</a></h1>
+          <li class="navbar-item"><a href="/home">Home</a></li>
+          <li class="navbar-item"><a href="/about">About</a></li>
+          <li class="navbar-item"><a href="/contact-us">Contact Us</a></li>
+          <li class="navbar-item navbar-right"><a href="#">Sign up</a></li>
+        </ul>
+      </nav>
+
     </header>
+
     <main>
-      <div class="info">
-        <p/> Temporary Page </p>
+    <strong> Count your GPA right here! It's easy!<br></strong>
+    <strong>Ensure you have a better future.<br></strong>
+    <br>
+    <br>
+
+    <div class="login body">
+      <div class="login required">
+        <label for="login-username">Username: </label>
+        <input type="text" id="login-input-username">
       </div>
+      <div class="login required">
+        <label for="login-password">Password: </label>
+        <input type="text" id="login-input-password">
+      </div>
+    </div>
+
+
+    <div class="login-container">
+      <button id="login-button">Log in</button>
+    </div>
+
     </main>
+
+    <footer>
+      <div class="copyright">
+        <strong>Copyright &copy; 2016</strong>
+      </div>
+    </footer>
   </body>
 </html>

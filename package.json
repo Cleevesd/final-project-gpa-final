@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/OSU-CS290-F16/express-dynamic-content#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "express": "^4.14.0",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.6"
   }
 }

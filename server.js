@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var express = require('express');
 var Handlebars = require('handlebars');
-var users = require('./users');
+var users = require('./private/users');
 var app = express();
 var port = process.env.PORT || 3000;
 
