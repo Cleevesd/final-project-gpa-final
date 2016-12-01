@@ -1,4 +1,4 @@
-header h1 {
+eader h1 {
   display: inline-block;
   font-family: "Verdana", cursive, sans-serif;
   font-size: 72px;
@@ -8,13 +8,13 @@ header h1 {
 
 header {
   #background-color: rgba(0, 0, 0, 0.155);
-  
+
 }
 
 header h1 {
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.262);
-  
+
   margin: 0px;
   padding-right: 85px;
   padding-left: 31px;
@@ -77,6 +77,7 @@ body {
 	background-color: rgba(196, 196, 196, 0.2);
 	padding: 15px;
 	border-radius: 20px;
+  height: 320px;
 	width: 600px;
 	margin: auto;
 }
@@ -93,12 +94,18 @@ body {
 .login-container {
   position: relative;
   bottom: -10px;
-  right: 50px:;
+  right: 30px:;
 }
 
-#login-button {
-  width: 100px;
-  height: 30px;
+.signup-container {
+  position: relative;
+  bottom: -20px;
+  right: 30px:;
+}
+
+#signup-button {
+  width: 130px;
+  height: 35px;
   background-color: silver;
   border: none;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
@@ -110,7 +117,22 @@ body {
   border-radius: 15px;
 }
 
-#login-button:hover {
+
+#login-button {
+  width: 100px;
+  height: 35px;
+  background-color: silver;
+  border: none;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+  color: black;
+  padding: 0 0 8px 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  border-radius: 15px;
+}
+
+#login-button:hover, #signup-button:hover {
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.33);
 }
 
