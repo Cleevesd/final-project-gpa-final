@@ -1,4 +1,4 @@
-eader h1 {
+header h1 {
   display: inline-block;
   font-family: "Verdana", cursive, sans-serif;
   font-size: 72px;
@@ -64,6 +64,9 @@ main {
   text-align: center;
   margin: 10%;
   font-size: 30px;
+}
+
+main strong{
   font-family: fantasy;
 }
 
