@@ -6,29 +6,46 @@ header h1 {
   margin: 5px 10px;
 }
 
+header {
+  #background-color: rgba(0, 0, 0, 0.155);
+  
+}
+
 header h1 {
-  color: white;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.262);
+  
+  margin: 0px;
+  padding-right: 85px;
+  padding-left: 31px;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 nav {
   background-color: black;
   color: white;
-  margin: -10px;
+  margin: 0px;
   font-size: 28px;
   font-weight: 200;
 }
 
 .navbar-list {
   list-style-type: none;
-  padding: 0;
-  margin: 0 20px;
+  padding: 0px;
+  margin: 0px;
+  background-color: #5E5E5E;
+  position: relative;
+  overflow: auto;
 }
 
 .navbar-item {
   display: inline;
+  float: left;
 }
 
 .navbar-item a {
+  text-decoration: none;
   display: inline-block;
   padding: 10px 20px;
   color: white;
@@ -42,7 +59,7 @@ nav {
   float: right;
 }
 
-main{
+main {
   color: black;
   text-align: center;
   margin: 10%;
@@ -50,9 +67,18 @@ main{
   font-family: fantasy;
 }
 
-body{
+body {
+  padding: 0px;
+  margin: 0px;
   /*background-image: url("https://lh6.ggpht.com/VS2t79QbOOg5UBo7wJ8h-n7dnvTPH9UvU1hNrYjn_DW2WwzxND4bjBc59prf1QyvP_UU=w300");*/
   background-image: url("images/geo-back.png");
+}
+.mainContainer{
+	background-color: rgba(196, 196, 196, 0.2);
+	padding: 15px;
+	border-radius: 20px;
+	width: 600px;
+	margin: auto;
 }
 
 .login p {
@@ -67,7 +93,7 @@ body{
 .login-container {
   position: relative;
   bottom: -10px;
-  right: 50px:
+  right: 50px:;
 }
 
 #login-button {
@@ -81,34 +107,35 @@ body{
   cursor: pointer;
   outline: none;
   font-size: 30px;
-  border-radius:15px;
+  border-radius: 15px;
 }
 
 #login-button:hover {
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.33);
 }
 
-footer{
+footer {
   color: black;
   position: fixed;
   bottom: 5px;
   right: 5px;
 }
+
 .info,
 .person,
-.course{
+.course {
   margin: 20px;
   padding: 20px;
   border: 3px solid #333;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #FFF;
 }
-.course{
 
+.course {
 }
 
 .info p,
 .person p,
-.course p{
+.course p {
   margin: 0;
 }
