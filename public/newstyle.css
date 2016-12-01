@@ -1,0 +1,164 @@
+header h1 {
+  display: inline-block;
+  font-family: "Verdana", cursive, sans-serif;
+  font-size: 72px;
+  font-weight: 200;
+  margin: 5px 10px;
+}
+
+header {
+  #background-color: rgba(0, 0, 0, 0.155);
+
+}
+
+header h1 {
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.262);
+
+  margin: 0px;
+  padding-right: 85px;
+  padding-left: 31px;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  font-size: 28px;
+  font-weight: 200;
+}
+
+.navbar-list {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  background-color: #5E5E5E;
+  position: relative;
+  overflow: auto;
+}
+
+.navbar-item {
+  display: inline;
+  float: left;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-item a:hover {
+  background-color: #444;
+}
+
+.navbar-right {
+  float: right;
+}
+
+main {
+  color: black;
+  text-align: center;
+  margin: 10%;
+  font-size: 30px;
+  font-family: fantasy;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  /*background-image: url("https://lh6.ggpht.com/VS2t79QbOOg5UBo7wJ8h-n7dnvTPH9UvU1hNrYjn_DW2WwzxND4bjBc59prf1QyvP_UU=w300");*/
+  background-image: url("images/geo-back.png");
+}
+.mainContainer{
+	background-color: rgba(196, 196, 196, 0.2);
+	padding: 15px;
+	border-radius: 20px;
+  height: 320px;
+	width: 600px;
+	margin: auto;
+}
+
+.login p {
+  margin: 15px 0;
+}
+
+.login p.indent-wrapped {
+  padding-left: 50px;
+  text-indent: -50px;
+}
+
+.login-container {
+  position: relative;
+  bottom: -10px;
+  right: 30px:;
+}
+
+.signup-container {
+  position: relative;
+  bottom: -20px;
+  right: 30px:;
+}
+
+#signup-button {
+  width: 130px;
+  height: 35px;
+  background-color: silver;
+  border: none;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+  color: black;
+  padding: 0 0 8px 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  border-radius: 15px;
+}
+
+
+#login-button {
+  width: 100px;
+  height: 35px;
+  background-color: silver;
+  border: none;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+  color: black;
+  padding: 0 0 8px 0;
+  cursor: pointer;
+  outline: none;
+  font-size: 30px;
+  border-radius: 15px;
+}
+
+#login-button:hover, #signup-button:hover {
+  box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.33);
+}
+
+footer {
+  color: black;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+}
+
+.info,
+.person,
+.course {
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid #333;
+  border-radius: 10px;
+  background-color: #FFF;
+}
+
+.course {
+}
+
+.info p,
+.person p,
+.course p {
+  margin: 0;
+}
+
