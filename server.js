@@ -60,6 +60,22 @@ app.get('*', function(req, res) {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
+app.get('/users', function (req, res, next) {
+    var content = usersTemplate(users);
+
+    if (content) {
+        var content = profileTemplate(user);
+
+        /* Use regular expressions to replace our template patterns with the
+         actual info associated with the given person. */
+        res.send(content);
+    }
+    else {
+        // If we don't have info for the requested person, fall through to a 404.
+        next();
+    }
+});
+
 // Listen on the specified port.
 app.listen(port, function () {
   console.log("== Listening on port", port);
