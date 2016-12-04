@@ -34,11 +34,11 @@ var content = usersTemplate({users: users})
  */
 app.get('/users/:user', function (req, res, next) {
 
-  var person = users[req.params.user];
+  var user = users[req.params.user];
 
-  if (person) {
+  if (user) {
 
-    var content = profileTemplate(person);
+    var content = profileTemplate(user);
 
     /*
      * Use regular expressions to replace our template patterns with the
