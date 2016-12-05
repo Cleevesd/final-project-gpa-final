@@ -34,11 +34,11 @@ var content = usersTemplate({users: users})
  */
 app.get('/users/:user', function (req, res, next) {
 
-  var person = users[req.params.user];
+  var user = users[req.params.user];
 
-  if (person) {
+  if (user) {
 
-    var content = profileTemplate(person);
+    var content = profileTemplate(user);
 
     /*
      * Use regular expressions to replace our template patterns with the
@@ -58,6 +58,22 @@ app.get('/users/:user', function (req, res, next) {
 // If we didn't find the requested resource, send a 404 error.
 app.get('*', function(req, res) {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+});
+
+app.get('/users', function (req, res, next) {
+    var content = usersTemplate(users);
+
+    if (content) {
+        var content = profileTemplate(user);
+
+        /* Use regular expressions to replace our template patterns with the
+         actual info associated with the given person. */
+        res.send(content);
+    }
+    else {
+        // If we don't have info for the requested person, fall through to a 404.
+        next();
+    }
 });
 
 // Listen on the specified port.
