@@ -19,8 +19,8 @@ var mysqlDB = process.env.MYSQL_DB;
 
 var mysqlConnection = mysql.createConnection({
     host: process.env.MYSQL_HOST,
-    user: 'web_user',
-    password: '',
+    user: 'root',
+    password: 'test',
     database: 'grade_calculator'
 });
 
@@ -127,10 +127,10 @@ app.get('/userdetails/:username', function (req, res, next) {
                             classes.push({
                                 name: row.name,
                                 grade: row.grade,
-                                credithours: row.credithours
+                                credithours: parseInt(row.credithours)
                             });
                             allGrades = allGrades + (row.credithours * row.grade);
-                            totalCredithours = totalCredithours + row.credithours;
+                            totalCredithours = parseInt(totalCredithours) + parseInt(row.credithours);
                         });
                         console.log('allgrades is:' + allGrades);
                         console.log('credithours is:' + totalCredithours);

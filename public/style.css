@@ -4,10 +4,11 @@ header h1 {
   font-size: 50px;
   font-weight: 200;
   margin: 5px 10px;
+  height: 1.5em;
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.262);
+  background-color: rgba(0, 0, 0, 0.35);
 
 }
 
@@ -81,6 +82,9 @@ body {
     height: 320px;
 	width: 600px;
 	margin: auto;
+	border: solid;
+	border-color: rgba(250, 250, 250, 0.3);
+	border-width: 1px;
 }
 
 .login p {
@@ -107,7 +111,7 @@ body {
 #add-user-button {
   width: 150px;
   height: 35px;
-  background-color: silver;
+  background-color: rgba(229, 229, 229, 0.13);
   border: none;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
   color: black;
@@ -115,14 +119,18 @@ body {
   cursor: pointer;
   outline: none;
   font-size: 30px;
-  border-radius: 15px;
+  border-radius: 5px;
+	border: solid;
+	border-color: rgba(250, 250, 250, 0.3);
+	border-width: 1px;
 }
 
 
 #login-button {
+	
   width: 100px;
   height: 35px;
-  background-color: silver;
+  background-color: rgba(229, 229, 229, 0.13);
   border: none;
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
   color: black;
@@ -130,7 +138,10 @@ body {
   cursor: pointer;
   outline: none;
   font-size: 30px;
-  border-radius: 15px;
+  border-radius: 5px;
+	border: solid;
+	border-color: rgba(250, 250, 250, 0.3);
+	border-width: 1px;
 }
 
 #login-button:hover, #add-user-button:hover {
@@ -155,17 +166,51 @@ footer {
   /*min-height: 200px;*/
 }
 
-.course {
+.person{
+    background-color: rgba(250, 250, 250, 0.1);
+	border: solid;
+	border-color: rgba(250, 250, 250, 0.3);
+	border-width: 1px;
 }
+
+.course {
+
+}
+
+#add-class-button {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+  padding-left: 5px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(0,0,0,0.25);
+  position: relative;
+  height: 3em;
+  width: 80px;
+  background: rgba(230,240,255,0.4);
+  border: 2px dashed transparent;
+  box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
 
 .info p,
 .person p,
 .course p {
   margin: 0;
+  background-color: #FFF;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(200, 200, 200)
 }
 
 .user a{
     color: white;
 }
 
-
+#userTable{
+  background-color: #FFF;
+  padding: 5px;
+  border-radius: 10px;
+}

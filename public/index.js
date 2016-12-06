@@ -267,9 +267,10 @@ function storeUserClass(id, name, grade, credithours, callback) {
 
 }
 
-
+console.log("Finnished");
 // Wait until the DOM content is loaded to hook up UI interactions, etc.
 window.addEventListener('DOMContentLoaded', function (event) {
+	console.log("Finnished");
     var addUserButton = document.getElementById('add-user-button');
 
     if (addUserButton) {

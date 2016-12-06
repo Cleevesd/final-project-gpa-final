@@ -9,6 +9,7 @@
 }
 
 #modal-popup {
+	
   position: fixed;
   top: 0;
   bottom: 0;
@@ -28,7 +29,7 @@
   min-width: 350px;
   min-height: 300px;
   margin: 40px auto;
-  background-color: #fff;
+  background-color: rgb(100, 100, 100);
   border-radius: 15px;
 }
 
