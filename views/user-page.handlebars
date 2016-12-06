@@ -1,0 +1,21 @@
+{{> header}}
+
+<main>
+    <div class="person">
+        <p>
+            Name: {{user.name}}
+        </p>
+
+        <br />
+        <div>Classes & Grades:</div>
+        <hr />
+        <table style="border: 0 solid red;width: 100%;">
+            {{#each user.classes}}
+                {{> user-classes}}
+            {{/each}}
+        </table>
+    </div>
+
+</main>
+
+{{> user-class-modal}}
