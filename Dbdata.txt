@@ -1,3 +1,0 @@
-Id,Name,Password
-1,Cody Cleeves,12345
-2,Tom Cleeves,12345
