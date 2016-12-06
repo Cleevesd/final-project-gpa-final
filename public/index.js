@@ -137,12 +137,8 @@ function loginValidation() {
                 document.getElementById('login-input-username').focus();
             }
             else {
-                //alert("User successfully logged in");
-
-                var postRequest = new XMLHttpRequest();
-                postRequest.open('GET', '/users/' + userName);
-                postRequest.send();
-
+                alert("User successfully logged in");
+                window.location.replace('/users/' + userName);
             }
         });
     }
