@@ -1,0 +1,9 @@
+{{> header}}
+
+<main>
+  {{#each users}}
+    <div class="user">
+        <p><a href="/userdetails/{{name}}">{{name}}</a></p>
+    </div>
+  {{/each}}
+</main>

@@ -1,0 +1,40 @@
+{{> header}}
+
+<main>
+    <div class="person">
+        <div style="text-align:left;float:left;">
+            Student: {{user.name}}
+        </div>
+        <div style="float:right;">
+            <button id="add-class-button">Add Class</button>
+       </div>
+        <br /><br />
+        <table style="width: 100%;font-size: .70em;">
+            <thead>
+                <tr style="">
+                    <td style="width: 60%;text-align:left;border-bottom: 2px solid gray;">Class</td>
+                    <td style="border-bottom: 2px solid gray;">Credit Hours</td>
+                    <td style="border-bottom: 2px solid gray;">Grade</td>
+                </tr>
+            </thead>
+            {{#each user.classes}}
+                {{> user-classes}}
+            {{/each}}
+            <tfoot>
+                <tr>
+                    <td colspan="3" style="border-top: 2px solid gray;">
+                        <div style="float:right;font-size:1em;padding-top:20px;">
+                            Your GPA is: {{user.gpa}}
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <input id="UserId" type="hidden" value="{{user.id}}" />
+    <input id="Username" type="hidden" value="{{user.name}}" />
+
+</main>
+
+{{> user-class-modal}}

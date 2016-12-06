@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -12,7 +12,8 @@
 <main>
     {{#each users}}
     <div class="user">
-        <p><a href="/users/{{@key}}">{{name}}</a></p>
+        <!--<p><a href="/users/{{@key}}">{{name}}</a></p>-->
+        <p><a href="/users/{{id}}">{{name}}</a></p>
     </div>
     {{/each}}
 </main>

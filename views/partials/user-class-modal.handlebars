@@ -1,0 +1,44 @@
+<div id="modal-backdrop" class="hidden"></div>
+<div id="modal-popup" class="hidden">
+  <div class="modal-dialog">
+
+    <div class="modal-header">
+      <h3>Add New Class</h3>
+      <button type="button" class="modal-close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="input-element">
+        <label for="className">Name:</label>
+        <input type="text" id="className">
+      </div>
+        <div class="input-element">
+            <label for="classCreditHours">Credit Hours:</label>
+            <input type="text" id="classCreditHours">
+        </div>
+        <div class="input-element">
+            <label for="classGrade">Grade:</label>
+            <select id="classGrade">
+                <option value="4">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.3">D+</option>
+                <option value="1">D</option>
+                <option value=".7">D-</option>
+                <option value="0">WF/F</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="modal-cancel-button">Cancel</button>
+      <button type="button" id="classinfosave" class="modal-accept-button">Add Class</button>
+    </div>
+
+  </div>
+</div>
