@@ -3,15 +3,18 @@
 <main>
     <div class="person">
         <p>
-            Name: {{user.name}}
+            Name: {{person.name}}
+        </p>
+        <p>
+            Password: {{person.password}}
         </p>
 
         <br />
         <div>Classes & Grades:</div>
         <hr />
         <table style="border: 0 solid red;width: 100%;">
-            {{#each user.classes}}
-                {{> user-classes}}
+            {{#each person.classes}}
+            {{> user-classes}}
             {{/each}}
         </table>
     </div>

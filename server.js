@@ -52,7 +52,7 @@ app.get('/home', function (req, res) {
 /* For the /users route, we dynamically build the content of the page using
  * the set of all available users by looping over the users and inserting
  * an HTML element representing each one. */
-app.get('/users', function (req, res) {
+app.get('/userlist', function (req, res) {
     /* Initiate a database query for all of our people in the database.  We'll
      * respond to the requesting client from within the callback of the MySQL
      * query. */
@@ -89,7 +89,7 @@ app.get('/users', function (req, res) {
 /* Here, we use a dynamic route to create a page for each user.  We use
  * Express machinery to get the requested user from the URL and then fill
  * in a template with that user's info. */
-app.get('/users/:username', function (req, res, next) {
+app.get('/userdetails/:username', function (req, res, next) {
     var userName = req.params.username;
 
     if (userName) {
@@ -119,6 +119,9 @@ app.get('/users/:username', function (req, res, next) {
                         /* Put each of the photos we fetched from the DB into an array to
                          * be passed along to Handlebars. */
                         var classes = [];
+                        var allGrades = 0;
+                        var totalCredithours = 0;
+                        var Gpa = 0;
 
                         rows.forEach(function (row) {
                             classes.push({
@@ -126,15 +129,21 @@ app.get('/users/:username', function (req, res, next) {
                                 grade: row.grade,
                                 credithours: row.credithours
                             });
+                            allGrades = allGrades + (row.credithours * row.grade);
+                            totalCredithours = totalCredithours + row.credithours;
                         });
-
+                        console.log('allgrades is:' + allGrades);
+                        console.log('credithours is:' + totalCredithours);
+                        Gpa= allGrades / totalCredithours;
+                        Gpa = Gpa.toFixed(2);
                         // Render the page, sending all the needed info to Handlebars.
-                        res.render('user-page', {
-                            pageTitle: 'User Details',
+                        res.render('user-details', {
+                            pageTitle: 'Student Details',
                             user: {
-                                userid: user.userid,
+                                id: user.id,
                                 name: user.name,
-                                classes: classes
+                                classes: classes,
+                                gpa: Gpa
                             }
                         });
                     }
@@ -166,33 +175,38 @@ app.post('/user-add', function (req, res, next) {
                 res.status(200).send();
         });
     } 
-    //else {
-    //    res.status(400).send("bla bla bla");
-    //}
+    else {
+        res.status(500).send("Missing or invalid parameter.");
+    }
 });
 
 
-app.post('/user/', function (req, res, next) {
-    /* If the POST body contains a class name, then add the new class to the user's classes in the DB and respond with success.  Otherweise, let the client know they made a bad request. */
-    if (req.body && req.body.name && req.body.password) {
+app.post('/userdetails/add-class/:userid', function (req, res, next) {
+    /* If the POST body contains a class name, then add the new user to the
+    * DB and respond with success.  Otherweise, let the client know they made a bad request. */
+
+    if (req.body) {
         mysqlConnection.query(
-            'INSERT INTO class (userid, name, grade) VALUES (?, ?, ?)',
-            [req.params.userid, req.body.name, req.body.grade],
+            'INSERT INTO class (name, grade, credithours, userid) VALUES (?, ?, ?, ?)',
+            [req.body.className, req.body.credithours, req.body.grade, req.params.userid],
             function (err, result) {
                 if (err) {
-                    /* Send an error response if there was a problem inserting the photos
-                    * into the DB. */
-                    console.log("== Error inserting class information for user (", req.body.name, ") into database:", err);
-                    res.status(500).send("Error inserting class information into database: " + err);
+                    /* Send an error response if there was a problem inserting the user
+                    * information into the DB. */
+                    console.log("== Error inserting Class information:", err);
+                    res.status(500).send("Error inserting Class information: " + err);
                 }
 
                 res.status(200).send();
             });
     }
-    //else {
-    //    res.status(400).send("Person photo must have a URL.");
-    //}
+    else {
+        res.status(500).send("Missing or invalid parameter.");
+    }
 });
+
+
+
 
 
 app.post('/validatelogin', function (req, res, next) {
@@ -211,7 +225,6 @@ app.post('/validatelogin', function (req, res, next) {
             else if (rows.length == 1) {
                 /* If we successfully fetched the people, use the data fetched from the DB to build an array to pass to Handlebars for rendering, and then do the rendering. */
                 var user = rows[0];
-                console.log(user);
 
                 sql = "SELECT * FROM class WHERE userid = " + user.id;
 

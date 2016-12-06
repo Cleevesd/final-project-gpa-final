@@ -1,7 +1,7 @@
 // JavaScript source code
-function storeUserInfo(name, password, callback) {
+function validateUserInfo(name, password, callback) {
     // We'll post to the add-photo endpoint for the appropriate person.
-    var postUrl = '/user-add';
+    var postUrl = '/';
 
     // Start a new request to post our newly added class as JSON data.
     var postRequest = new XMLHttpRequest();

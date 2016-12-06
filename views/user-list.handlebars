@@ -2,6 +2,8 @@
 
 <main>
   {{#each users}}
-    {{> user-link}}
+    <div class="user">
+        <p><a href="/userdetails/{{name}}">{{name}}</a></p>
+    </div>
   {{/each}}
 </main>

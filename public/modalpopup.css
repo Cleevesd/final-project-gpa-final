@@ -66,12 +66,12 @@
 
 .input-element label {
   font-weight: 600;
-  flex: 1 75px;
-  margin-right: 10px;
+  flex: 2 0;
+  /*margin-right: 10px;*/
 }
 
-.input-element input {
-  flex: 6 200px;
+.input-element input, select {
+  flex: 4;
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;

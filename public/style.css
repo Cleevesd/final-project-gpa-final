@@ -152,6 +152,7 @@ footer {
   border: 3px solid #333;
   border-radius: 10px;
   background-color: #FFF;
+  /*min-height: 200px;*/
 }
 
 .course {
